@@ -1,29 +1,64 @@
+//FUNCTION COMPONENT 
+
 import ListItem from "./ListItem";
+
+import {useState} from 'react'
 
 const Content = () => {
 
-    const chores = ["item 1", "item 2", "item 3", "item 4"]
-    return (
+    // let counter = 0
+    // let and var will not work because react will not register the CHANGE
+    //react only registers a state change when you change it using this mysteryFunction.
+    const [counter,setCounter] = useState(1) 
+    // console.log(counter)
+    // console.log(mysteryFunction)
+
+    return (  
         <div className="container">
-            <ul>
-                {
-                    // chores.map(chore =>  <ListItem fruit={"apple"} a={chore} b={chores}/>)
-
-                    // these values which we are passing are called props . these are just values u may or maynot pass to a component
-
-                    // so we can pass n no. of things using this syntax . so here we are passing the actual item which is been maped over and the array 
-                    // so in the ListItem.js file the ListItem function the values variable receives an object of whatever you have passed
-                    //so it looks like : p = {
-                    //     fruit:"apple",
-                    //     chore:"whatever it is",
-                    //     chores:[]
-                    // }
-
-                    chores.map(chore =>  <ListItem a={chore}/>)
-                }
-            </ul>
+            <h1>{counter}</h1>
+            <button onClick={()=>{
+                // console.log('button clicked')
+                // console.log(counter)
+                // counter = counter + 1
+                setCounter(previousValue => {
+                    // console.log(previousValue)
+                    return previousValue+1;
+                })
+                console.log(counter)
+            }}>ClickMe</button>
         </div>
     );
 }
 
 export default Content; 
+// useState HOOK ALLOWS US TO HOOK INTO THE FUNCTIONALITY OF ACTUAL STATE
+// IN CLASS COMPONENT WE HAD THE ACCESS TO THE STATE VARIABLE WHILE IN FUNCTION COMPONENT WE DON'T SO WE HAD TO USE THIS useState HOOK
+//Hooks don’t work inside classes. But you can use them instead of writing classes.
+
+
+//CLASS COMPONENT 
+// import React from 'react';
+
+// class Content extends React.Component {
+//     constructor() {
+//         super();
+//         //HERE STATE IS AN OBJECT IN WHICH WE CAN CREATE MULTIPLE KEY VALUE PAIR AND CAN UPDATE THEM AND REACT WILL REGISTER EACH CHANGE
+//         this.state = {
+//             count: 0
+//         };
+//     }
+//     render() {
+//         return (
+//             <div className="container">
+//                 {/* <h1>{counter}</h1>
+//                 <button onClick={() => {
+//                     console.log('button clicked')
+//                     console.log(counter)
+//                     counter = counter + 1
+//                 }}>ClickMe</button> */}
+//                 loremipnsansjcnjcnsdjcndncdjcsnjcndj 
+//             </div>
+//         )
+//     }
+// }
+// export default Content;
