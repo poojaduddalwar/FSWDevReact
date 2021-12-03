@@ -2,11 +2,11 @@ const Footer = () => {
     return (
         <footer>
             <a href="#">Github</a>
-            <a href="#">Youtube</a>
             <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Linkedin</a>
         </footer>
     );
 }
 
-export default Footer; 
+export default Footer;
