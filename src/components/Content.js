@@ -31,10 +31,3 @@ const Content = () => {
 }
 
 export default Content;
-
-//useEffect is a hook that allows to hook into the life cycle methods .
-//it accepts two parameters : 1. function which is going to run 
-//                            2. dependencies 
-
-//u can never make useEffect async
-//u can have multiple useEffect
