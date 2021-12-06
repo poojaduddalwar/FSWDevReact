@@ -1,13 +1,10 @@
-import Description from "./components/Description";
-import DescriptionTwo from "./components/DescriptionTwo";
+import { useState } from 'react';
+import One from "./components/One";
 
 const App = () => {
-  // console.log(Description)
   return (
     <div className="App">
-      <Description heading={'Mercedes S-Class'} />
-      {/* <DescriptionTwo /> */}
-      {/* <Description admin={true} /> */}
+      <One />
     </div>
   );
 };
