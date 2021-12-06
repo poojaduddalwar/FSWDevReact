@@ -1,14 +1,13 @@
-import ChildOne from "./components/ChildOne";
-import { useState } from "react";
+import Description from "./components/Description";
+import DescriptionTwo from "./components/DescriptionTwo";
 
 const App = () => {
-
-  const [data, setdata] = useState([{ Name: "pooja" }, { Name: "nisha" }])
-
+  // console.log(Description)
   return (
     <div className="App">
-      <h1> I'm the parent</h1>
-      <ChildOne data={data} />
+      <Description heading={'Mercedes S-Class'} />
+      {/* <DescriptionTwo /> */}
+      {/* <Description admin={true} /> */}
     </div>
   );
 };
