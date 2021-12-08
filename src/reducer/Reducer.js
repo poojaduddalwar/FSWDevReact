@@ -1,8 +1,8 @@
-const initstate = [{ password: 'something' }, { password: 'anything' }, { password: 'nothing' }]
 
-const reducer = (state = initstate, action) => {
+const reducer = (state = {}, action) => {
     switch (action.type) {
-        case 'ADD_DATA':
+        case 'ADD_DATA':   //here ADD_DATA is the action
+            //this action returns new array which contain all data in the previous state and the new data 
             return [...state, action.payload]
         default:
             return state
