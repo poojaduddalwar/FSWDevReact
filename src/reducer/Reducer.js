@@ -1,9 +1,14 @@
 
 const reducer = (state = {}, action) => {
-    switch (action.type) {
-        case 'ADD_DATA':   //here ADD_DATA is the action
-            //this action returns new array which contain all data in the previous state and the new data 
-            return [...state, action.payload]
+    const { type, payload } = action
+
+    //payload is just the data which you want to add or remove from the state
+
+    switch (type) {
+        case "ADD_PRODUCT":
+            // console.log(action)
+            const { products } = state
+            return { ...state, products: [...products, payload] }
         default:
             return state
     }
@@ -12,4 +17,5 @@ const reducer = (state = {}, action) => {
 export default reducer;
 
 
-//when you initialize a reducer it expects you to provide the initial value of state and the action
+// we can't push to the state because states are immutable
+//whatever the reducer return is the new value of the state . 

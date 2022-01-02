@@ -3,18 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { createStore } from 'redux';
-//this createStore is a function imported from redux which allows us to create that global store
 import reducer from './reducer/Reducer';
 import { Provider } from 'react-redux';
-//this provider is gives access to the redux store
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(reducer, { products: ['iphone11', 'iphone12', 'iphone13'], categories: ['mobiles', 'headphone', 'cases'] }, composeWithDevTools())
-//reducer is the plain js function which can modify the store depending on what action you pass 
 
-//the createStore function accepts 3 parameters :-
-// 1. reducer
-// 2. initial state (so whatever data u pass as 2nd parameter is going to be the initial state of the redux store)
+//here whatever is passed as the second parameter of createStore function is the initial state of the redux store. we can add an empty object as second parameter so that initial state will be empty 
+//3rd parameter is the middleware i.e composeWithDevTools . it is because of this middleware we are able to use redux devtools on our application.
 
 ReactDOM.render(
   <React.StrictMode>
