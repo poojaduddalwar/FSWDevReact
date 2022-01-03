@@ -2,13 +2,13 @@
 const reducer = (state = {}, action) => {
     const { type, payload } = action
 
-    //payload is just the data which you want to add or remove from the state
-
     switch (type) {
-        case "ADD_PRODUCT":
-            // console.log(action)
-            const { products } = state
-            return { ...state, products: [...products, payload] }
+        case "DELETE_ITEM":
+            return state.filter(item => item.id != payload)
+
+        case "ADD_ITEM":
+            return [...state, payload]
+
         default:
             return state
     }
@@ -16,6 +16,5 @@ const reducer = (state = {}, action) => {
 
 export default reducer;
 
-
-// we can't push to the state because states are immutable
-//whatever the reducer return is the new value of the state . 
+//as soon as the central state changes it remaped over the values or re-renders
+//a state change in redux also triggers a re-render like it does in react using the useState hook  
