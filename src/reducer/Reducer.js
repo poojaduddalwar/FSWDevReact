@@ -15,6 +15,3 @@ const reducer = (state = {}, action) => {
 }
 
 export default reducer;
-
-//as soon as the central state changes it remaped over the values or re-renders
-//a state change in redux also triggers a re-render like it does in react using the useState hook  
